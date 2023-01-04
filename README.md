@@ -44,4 +44,6 @@ kubectl delete pod image-catalog-deployment-6f59c5d96c-rjz46
 ```
 Secrets: https://kubernetes.io/docs/concepts/configuration/secret/
 
+
+
 # rso-images
