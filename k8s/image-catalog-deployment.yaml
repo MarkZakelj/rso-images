@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: image-catalog-deployment
+  name: image-catalog
 spec:
   replicas: 1
   selector:
@@ -13,11 +13,11 @@ spec:
         app: image-catalog
     spec:
       containers:
-        - image: prporso/image-catalog:2022-10-27-17-33-13
+        - image: mzakel/image-catalog:2023-01-04-21-06-17
           name: image-catalog
           env:
             - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
-              value: jdbc:postgresql://fanny.db.elephantsql.com:5432/tfzmcoxl
+              value: jdbc:postgresql://dumbo.db.elephantsql.com:5432/tfzmcoxl
             - name: KUMULUZEE_DATASOURCES0_USERNAME
               value: tfzmcoxl
             - name: KUMULUZEE_DATASOURCES0_PASSWORD
@@ -37,7 +37,7 @@ kind: Service
 metadata:
   name: image-catalog
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
     - port: 8080
       protocol: TCP

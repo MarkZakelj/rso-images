@@ -10,6 +10,8 @@ import org.eclipse.microprofile.openapi.annotations.info.Info;
 import org.eclipse.microprofile.openapi.annotations.info.License;
 import org.eclipse.microprofile.openapi.annotations.servers.Server;
 
+import com.kumuluz.ee.cors.annotations.CrossOrigin;
+@CrossOrigin(allowOrigin = "*")
 @OpenAPIDefinition(info = @Info(title = "Image catalog API", version = "v1",
         contact = @Contact(email = "rso@fri.uni-lj.si"),
         license = @License(name = "dev"), description = "API for managing image metadata."),
